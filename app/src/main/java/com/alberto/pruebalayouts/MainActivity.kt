@@ -4,9 +4,8 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.browse
+import org.jetbrains.anko.*
 
-import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,18 +26,18 @@ class MainActivity : AppCompatActivity() {
         }
 
         // Variable para crear un intent
-        val intent = Intent(this, OtraActivity::class.java).apply {
+        val myIntent = Intent(this, OtraActivity::class.java).apply {
             // Función para pasarle un id y el contenido
-            //putExtra("id", 5)
+            putExtra("id", 5)
+            putExtra("Myid", "HOLA")
+
         }
 
 
         btn_Generic.setOnClickListener(){
 
-            // Abre un navegador
-            browse("https://www.pokemon.com/es/episodios-pokemon/")
             // Abre otra actividad
-            //startActivity(intent)
+            startActivity(myIntent)
         }
 
 
